@@ -1,10 +1,17 @@
+// Vendor dependencies
 import React from 'react';
 import styled from 'styled-components';
+
+// Custom dependencies
+import FriendList from './components/friend-list'
 
 class App extends React.Component {
   render() {
     return (
-      <div>Hello world</div>
+      <div>
+        <h1>Who would you like to meet with?</h1>
+        <FriendList />
+      </div>
     );
   }
 }
