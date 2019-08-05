@@ -1,8 +1,25 @@
-const express = require('express')
-const app = express()
-const port = 8000
+const express = require('express');
+const app = express();
 
-app.get('/', (req, res) => res.send('<h1>Hello, this is the meeting-app\'s server</h1>'))
+const router = express.Router();
+const API_PORT = 3001;
 
-app.listen(port, () => console.log(`meeting-app server listening on port ${port}`))
+router.get('api/friendlist', (res, req) => {
+  const friend_list = [
+    {
+      id: 1,
+      first_name: 'Vincent',
+      last_name: 'Wei'
+    },
+    {
+      id: 2,
+      first_name: 'Thomous',
+      last_name: 'Ackling'
+    }
+  ];
+
+  res.json(friend_list);
+});
+
+app.listen(API_PORT, () => console.log(`meeting-app server listening on port ${API_PORT}`))
 
