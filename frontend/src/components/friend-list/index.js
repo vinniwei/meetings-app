@@ -11,7 +11,7 @@ class FriendList extends React.Component {
   }
 
   componentDidMount(){
-    fetch('http://localhost:3001/api/friendlist')
+    fetch('http://localhost:5000/friendlist')
       .then(res => res.json())
       .then(friend_list => this.setState({friend_list}), () => console.log('Friend list fetched...')); 
   }
