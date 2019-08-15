@@ -20,7 +20,7 @@ app.get('/friendlist', (req, res) => {
     },
     {
       id: 2,
-      first_name: 'Thomous',
+      first_name: 'Thomas',
       last_name: 'Ackling'
     }
   ];

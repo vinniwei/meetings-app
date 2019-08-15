@@ -11,15 +11,27 @@ class FriendList extends React.Component {
   }
 
   componentDidMount(){
-    fetch('/friendlist')
-      .then(res => res.json())
-      .then(friend_list => this.setState({friend_list}), () => console.log('Friend list fetched...')); 
+    fetch('http://localhost:5000/friendlist')
+      .then(res => {
+        console.log(res);
+        return res.json();
+      })
+      .then(
+        friend_list => {
+          this.setState({friend_list});
+        }, 
+        error => console.error('Friend list fetched...', error)); 
   }
 
   render() {
     return (
       <div>
         <h2>Friend's Calendar List</h2>
+        <ul>
+          {this.state.friend_list.map(friend => 
+            <li key={ friend.id }> { friend.first_name }</li>
+          )}
+        </ul>
       </div>
     );
   }
