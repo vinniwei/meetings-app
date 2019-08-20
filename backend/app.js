@@ -12,20 +12,20 @@ app.use(function(req, res, next) {
 app.get('/', (req, res) => res.send('Hello World!'));
 
 app.get('/friendlist', (req, res) => {
-  const friend_list = [
+  const friendList = [
     {
       id: 1,
-      first_name: 'Vincent',
-      last_name: 'Wei'
+      firstName: 'Vincent',
+      lastName: 'Wei'
     },
     {
       id: 2,
-      first_name: 'Thomas',
-      last_name: 'Ackling'
+      firstName: 'Thomas',
+      lastName: 'Ackling'
     }
   ];
 
-  res.json(friend_list);
+  res.json(friendList);
 });
 
 app.listen(API_PORT, () => console.log(`meeting-app server listening on port ${API_PORT}`))

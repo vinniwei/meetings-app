@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 // Custom dependencies
-import FriendList from './components/friend-list'
+import FriendList from './components/friendList'
 
 class App extends React.Component {
   render() {
